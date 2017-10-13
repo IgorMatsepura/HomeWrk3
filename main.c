@@ -6,61 +6,53 @@
 
 int main()
 {
-int scannum=0;
-int numb=0;
-int let=0;
-char ch=0;
+int scannum;
+int numb = 0;
+int let;
+char ch = 0;
 
 for (;;){
     srand(time(NULL));
     numb = rand() % 10;
-
     int i=0;
     for (i;i<3;i++){
-
         for (;;){
-
             printf("\n Enter positive numbers 0...10 : ");
-            let= scanf("%d", &scannum);
-            //not input letter
+            let = scanf("%d", &scannum);
             if (scannum<0){
-                printf("\n It's negative Numbers \n");
+                printf("\n It's negative Numbers\n");
                 continue;
-               }
-             /* не удалось правильно реализовать
-              при первом заходе норм какб но если
-              мы вводим 2,3 то косяк как сделать не могу понять
-             */
-             if (strchr ("0123456789", scannum)){
-                printf("\n It's not numbers. Pls enter Number \n");
-                getch();
-                fflush(stdin);
-                continue;
-
             }
-             break;
+        break;
         }
 
-        if (scannum==numb){
+        if ((scannum == numb) && (let == 1)) {
             printf("Yahoo\n");
             break;
         }
 
-        if (scannum<numb){
+        if ((scannum<numb) && (let == 1)){
             printf("Lower numb! ");
         }
 
-        if (scannum>numb){
+        if ((scannum>numb) && (let == 1)){
             printf("Bigger numb! ");
+        }
+
+        if (let == 0) {
+            printf("\n It's letter input number... \n");
+            break;
+            continue;
         }
     }
 
-        printf("\nContine or exit ?  Y/N ");
-        scanf("%c", &ch);
-        ch=getchar();
-        if (( ch == 78 )|| ( ch == 110 )) {
-        return 0;
-       }
+    printf("\nContine or exit ?  Y/N ");
+    scanf("%c", &ch);
+    ch=getchar();
+    if (( ch == 78 ) || ( ch == 110 )) {
+    return 0;
+    }
 }
+
 return 0;
 }
