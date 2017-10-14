@@ -23,6 +23,11 @@ for (;;){
                 printf("\n It's negative Numbers\n");
                 continue;
             }
+            if (let == 0) {
+            printf("\n It's letter input number... \n");
+            fflush(stdin);
+            continue;
+            }
         break;
         }
 
@@ -31,18 +36,12 @@ for (;;){
             break;
         }
 
-        if ((scannum<numb) && (let == 1)){
+        if ((scannum < numb) && (let == 1)){
             printf("Lower numb! ");
         }
 
-        if ((scannum>numb) && (let == 1)){
+        if ((scannum > numb) && (let == 1)){
             printf("Bigger numb! ");
-        }
-
-        if (let == 0) {
-            printf("\n It's letter input number... \n");
-            break;
-            continue;
         }
     }
 
@@ -53,6 +52,5 @@ for (;;){
     return 0;
     }
 }
-
 return 0;
 }
